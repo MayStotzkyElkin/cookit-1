@@ -20,13 +20,16 @@ for (var i=0; i<markSen.ingredientIndexList.length; i++){
 }
 
 var splitedSentence = markSen.splitSentence(sentence);
-stateBuilder.createStatement(splitedSentence, markSen);
+var nitz_res = stateBuilder.createStatement(splitedSentence, markSen);
 
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
  
 // test route
-app.post('/', function (req, res) { res.status(200).send('Hello world!'); });
+app.post('/', function (req, res) { 
+  console.log("nitz: %j", nitz_res);
+  res.status(200).send("hello\n"); 
+});
  
 app.listen(port, function () {
   console.log('Listening on port ' + port);
