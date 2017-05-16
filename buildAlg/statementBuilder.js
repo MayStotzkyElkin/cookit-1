@@ -24,7 +24,6 @@ StatementBuilder = function() {
                             "ON ingredientsSec.Ingredient_ID = ingToRecSec.Ingredient_ID";
 
 
-        console.log(statement);
         return statement;
     }
 
